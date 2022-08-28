@@ -1,7 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Header, Footer, MovieDetails, PageNoteFound } from './common/routes';
-import Home from './components/home/Home'
+import { Home, Header, Footer, MovieDetails, PageNoteFound } from './common/routes';
 import './App.scss';
 
 function App() {
