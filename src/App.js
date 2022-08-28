@@ -1,10 +1,22 @@
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { Header, Footer, MovieDetails, PageNoteFound } from './common/routes';
+import Home from './components/home/Home'
 import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      hi
-    </div>
+    <>
+      <Header />
+      <div className='container'>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/movie/imdbID' element={<MovieDetails />} />
+          <Route path='*' element={<PageNoteFound />} />
+        </Routes>
+      </div>
+      <Footer />
+    </>
   );
 }
 
