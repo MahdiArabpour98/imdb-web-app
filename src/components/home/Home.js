@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAsyncMovies } from "../../redux/movies/moviesSlice";
+import { fetchAsyncMovies, fetchAsyncShows } from "../../redux/movies/moviesSlice";
+import { MovieListing } from "../../common/routes"
 import "./Home.scss";
 
 
@@ -11,19 +12,18 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(fetchAsyncMovies());
+    dispatch(fetchAsyncShows());
   }, [dispatch])
-
-  useEffect(() => {
-    console.log('movieState', loading)
-  }, [loading])
 
   return (
     <>
       {
         loading ? (
-          <div> loading.....................</div >
+          <div className="loading"> loading...</div >
         ) : (
-          <div>Home</div>
+          <div className="banner-img">
+            <MovieListing />
+          </div>
         )
       }
     </>
